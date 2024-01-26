@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: fintech-fake-eureka-server
+  security:
+    basic:
+      enabled: true
+    user:
+      name: fintech-fake-eureka-user
+      password: fintech-fake-eureka-password
+
+server:
+  port: 8761
+
+eureka:
+  client:
+    register-with-eureka: false
+    fetch-registry: false

@@ -1,0 +1,23 @@
+spring:
+  application:
+    name: fintech-fake-ms-clientes
+
+server:
+  port: 0 # Porta aleatoria
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://fintech-fake-eureka-user:fintech-fake-eureka-password@${FINTECH_FAKE_EUREKA_SERVER}:8761/eureka # URL do servidor eureka
+  instance:
+    instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}} # Nome da instancia
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+
+logging:
+  file:
+    name: ./logs/log-file.log

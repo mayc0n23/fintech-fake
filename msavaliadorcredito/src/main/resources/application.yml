@@ -1,0 +1,22 @@
+spring:
+  application:
+    name: fintech-fake-ms-avaliador-credito
+  rabbitmq:
+    host: localhost # Host do servidor rabbitmq
+    port: 5672 # Porta do servidor rabbitmq
+    username: guest # Usuario do servidor rabbitmq
+    password: guest # Senha do servidor rabbitmq
+
+server:
+  port: 0 # Porta aleatoria
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://fintech-fake-eureka-user:fintech-fake-eureka-password@localhost:8761/eureka # URL do servidor eureka
+  instance:
+    instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}} # Nome da instancia
+
+mq:
+  queues:
+    emissao-cartoes: emissao-cartoes
